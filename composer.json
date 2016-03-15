@@ -1,0 +1,14 @@
+{
+    "name": "sam/mtc",
+    "description": "Maltem Training Center",
+    "require-dev": {
+        "symfony/var-dumper": "^3.0",
+        "phpunit/phpunit": "^5.0"
+    },
+    "require": {},
+    "autoload" : {
+        "psr-4": {
+            "MTC\\": "src/MTC"
+        }
+    }
+}
