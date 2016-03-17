@@ -26,6 +26,10 @@ class Config
         return self::$instance;
     }
 
+    /**
+     * @param $files
+     * parse_ini_file — Analyse un fichier de configuration
+     */
     public function parseFile($files){
         $this->config = parse_ini_file($files);
     }

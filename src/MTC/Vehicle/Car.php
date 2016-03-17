@@ -36,7 +36,10 @@ class Car implements VehicleInterface
      */
     public function paint($color)
     {
-         $this->color = $color;
+        if(!in_array($color,['grey','yellow','blue','green','black','white']))
+            throw new \Exception('Unknown Color');
+
+        $this->color = $color;
     }
 
     /**
@@ -53,7 +56,7 @@ class Car implements VehicleInterface
      */
     public function getBrand()
     {
-        return $this->brand;
+        return ucfirst($this->brand);
     }
 
     /**
@@ -61,7 +64,7 @@ class Car implements VehicleInterface
      */
     public function setBrand($brand)
     {
-        $this->brand = $brand;
+        $this->brand = ucfirst($brand);
     }
 
     /**
@@ -142,6 +145,13 @@ class Car implements VehicleInterface
     public function setTrunkDepth($trunkDepth)
     {
         $this->trunkDepth = $trunkDepth;
+    }
+
+
+    public function camouflage($color, $brand)
+    {
+        $this->color = $color;
+        $this->setBrand($brand);
     }
 
 

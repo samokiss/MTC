@@ -8,12 +8,16 @@
 
 namespace MTC\Vehicle;
 
-use MTC\Tools\config as MyConfig;
+use MTC\Tools\config;
 
 class VehicleFactory
 {
-    public static function getVehicle($type, $config)
+    public static function getVehicle($type, Config $config)
     {
+        if (!in_array(ucfirst($type), ['Car','Truck'])){
+            throw new \Exception('Unknown Model');
+        }
+
         $class = __NAMESPACE__.'\\'.ucfirst($type);
 
         $vehicle = new $class($config->door, $config->color);

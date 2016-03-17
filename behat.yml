@@ -1,0 +1,13 @@
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://google.fr
+      goutte: ~
+      selenium2: ~
+  suites:
+    core:
+      contexts: [FeatureContext, BasketContext]
+      filters: {tags: '@core'}
+    ui:
+      contexts : [FeatureContext, WebContext]
+      filters: {tags: '@ui'}

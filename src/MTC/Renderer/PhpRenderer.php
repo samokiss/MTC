@@ -37,7 +37,7 @@ class PhpRenderer
         $this->data[$variable] = $value;
     }
 
-    public function __destruct()
+    public function render()
     {
         extract($this->data);
         include $this->view;

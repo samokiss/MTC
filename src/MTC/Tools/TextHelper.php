@@ -17,10 +17,4 @@ class TextHelper
         return strtoupper($brand);
     }
 
-    public static function computeTrunkVolume(VehicleInterface $car)// ici on force le type
-    {
-        return 'Le volume du coffre est de '
-            . $car->availableVolume()
-            . 'm3';
-    }
 }
